@@ -1,0 +1,40 @@
+ 
+<div class="container">
+    <form #formulario="ngForm" autocomplete="off" (ngSubmit)="salvar(formulario)">
+    <p-panel>
+      <p-header>
+          <div class="ui-helper-clearfix">
+              <span class="ui-panel-title" style="font-size:16px;display:inline-block;margin-top:2px">Novo Usuário</span>    
+          </div>
+      </p-header>
+        Complete as informações abaixo!
+        <div class="ui-g-12 ui-md-12 ui-fluid">
+          <div class="ui-g-3 ui-md-3 ui-fluid">
+            <h3 class="first">Nome</h3>
+            <input name="nome" type="text" pInputText [(ngModel)]="usuario.nome">
+          </div>
+        </div> 
+        <div class="ui-g-12 ui-md-12 ui-fluid">
+          <div class="ui-g-3 ui-md-3 ui-fluid">
+            <h3 class="first">E-mail</h3>
+            <input name="email" type="text" pInputText [(ngModel)]="usuario.email">
+          </div> 
+        </div>
+        <div class="ui-g-12 ui-md-12 ui-fluid">
+          <div class="ui-g-3 ui-md-3 ui-fluid">
+            <h3 class="first">Data Cadastro</h3>
+            <p-calendar name="dataCadastro" [(ngModel)]="usuario.dataCadastro" dateFormat="dd/mm/yy" required></p-calendar>
+          </div>
+        </div> 
+        <div class="ui-g-12 ui-md-12 ui-fluid">
+          <div class="ui-g-1 ui-md-1 ui-fluid">        
+            <p-checkbox name="ativo" label="Ativo" binary="true" [(ngModel)]="usuario.ativo"></p-checkbox> 
+          </div>
+        </div>
+      <p-footer>
+          <button pButton type="submit" icon="pi pi-plus" label="Salvar" class="ui-button-info" style="margin-right: .25em"></button>        
+          <button pButton type="button" label="Voltar" routerLink="/usuarios" class="ui-button-danger"></button>
+      </p-footer>
+    </p-panel>
+  </form>
+</div>
